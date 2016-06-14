@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('subcommittees', {path:'/subcommittees/:committee_id'});
   this.route('bills', {path: '/bills/:bill_id'});
   this.route('upcoming-bills');
+  this.route('bio-page', {path: '/bio-page/:sponsor_id'});
 });
 
 export default Router;

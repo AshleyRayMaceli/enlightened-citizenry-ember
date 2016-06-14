@@ -1,16 +1,21 @@
 import Ember from 'ember';
 
+var houseUrl = 'http://congress.api.sunlightfoundation.com/upcoming_bills?chamber=house&apikey=cba47f9513254c58a97c683229e84758';
+
+var senateUrl = 'http://congress.api.sunlightfoundation.com/upcoming_bills?chamber=senate&apikey=cba47f9513254c58a97c683229e84758';
+
 export default Ember.Route.extend({
-
   model: function() {
-    var url = 'http://congress.api.sunlightfoundation.com/upcoming_bills?apikey=cba47f9513254c58a97c683229e84758&range=day'
-    return Ember.$.getJSON(url).then(function(responseJSON) {
+      return Ember.RSVP.hash({
+        house: Ember.$.getJSON(houseUrl).then(function(responseJSON) {
+          console.log(responseJSON.results);
+          return responseJSON.results;
+        }),
+        senate: Ember.$.getJSON(senateUrl).then(function(responseJSON) {
+          console.log(responseJSON.results);
+          return responseJSON.results;
 
-      // sortBy: ['responseJSON.results.chamber:asc'],
-      // sortThis: Ember.computed.sort('responseJSON.results', 'sortBy'),
-      console.log(responseJSON.results[0].chamber);
-      return responseJSON.results;
-    });
-  },
-
-});
+        })
+      });
+    }
+  });

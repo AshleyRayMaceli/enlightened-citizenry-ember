@@ -1,2 +1,2 @@
 <h1>Bill Details for {{model.bill_id}}</h1>
-<h3>{{model.official_title}} Introduced by: {{model.sponsor.first_name}} {{model.sponsor.last_name}}</h3>
+<h3>{{model.official_title}} Introduced by: {{#link-to 'bio-page' model.sponsor_id}}{{model.sponsor.first_name}} {{model.sponsor.last_name}}{{/link-to}}</h3>
