@@ -1,0 +1,7 @@
+<h1>Upcoming Bills</h1>
+{{#link-to 'bills-page'}}<button>Show Recent Bills</button>{{/link-to}}
+<ul>
+  {{#each model as |bill|}}
+  <li>{{#link-to 'bills' bill.bill_id}}{{bill.bill_id}} scheduled for: {{bill.legislative_day}}{{/link-to}}</li>
+  {{/each}}
+</ul>

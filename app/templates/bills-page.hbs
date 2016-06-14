@@ -1,5 +1,5 @@
-<h1>Bills</h1>
-
+<h1>Recent Bills</h1>
+{{#link-to 'upcoming-bills'}}<button>Show Upcoming Bills</button>{{/link-to}}
 <ul>
   {{#each model as |bill|}}
   <li>{{#link-to 'bills' bill.bill_id}}{{bill.bill_id}} introduced on: {{bill.introduced_on}}{{/link-to}}</li>
