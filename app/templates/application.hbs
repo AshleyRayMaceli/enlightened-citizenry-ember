@@ -1,0 +1,16 @@
+<nav class='navbar navbar-default'>
+  <div class='container-fluid'>
+    <div class="anvbar-header">
+      <a class='navbar-brand' href='#'>EC</a>
+    </div>
+    <ul class='nav navbar-nav'>
+      <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+      <li>{{#link-to 'committees'}}Committees{{/link-to}}</li>
+      <li>{{#link-to 'bills-page'}}Bills{{/link-to}}</li>
+      <li>{{#link-to 'leg-lookup'}}Legislator Lookup{{/link-to}}</li>
+    </ul>
+  </div>
+</nav>
+<div class='container'>
+  {{outlet}}
+</div>
